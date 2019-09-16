@@ -1,7 +1,12 @@
-﻿namespace D2DBM
+﻿using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace D2DBM
 {
     public class HeroModel
     {
+        [Key]
         public int Id { set; get; }
         public string Name { set; get; } // -> Axe
         public HeroRole Roles { set; get; } // -> Nuker | Escaper
@@ -25,7 +30,9 @@
         public float BaseTurnSpeed { set; get; }   // -> 0.6
         public int BaseDayVision { set; get; }
         public int BaseNightVision { set; get; }
-        public int BaseMagicResistance { set; get; } // 25
+        public int BaseMagicResistance { set; get; } // -> 25
+        public float SpellAmplification { set; get; }
+        public float StatusResistance { set; get; }
     }
 
     public enum HeroAttributeType
